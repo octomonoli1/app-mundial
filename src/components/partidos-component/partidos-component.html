@@ -1,1 +1,6 @@
-<p>partidos-component works!</p>
+<h1>Partidos</h1>
+<ul>
+    @for(partido of partidos; track partido.id){
+        <li>{{partido.equipoLocal}} vs {{partido.equipoVisitante}}</li>
+    }
+</ul>
