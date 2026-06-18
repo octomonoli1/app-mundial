@@ -1,0 +1,116 @@
+/* Contenedor principal */
+.contenedor-partidos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+.contenedor-partidos h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+/* Grid de tarjetas */
+.lista-partidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta */
+.card-partido {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card-partido:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.fase {
+    background-color: #2563eb;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.grupo {
+    background-color: #10b981;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Equipos y resultado */
+.equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.equipo {
+    width: 35%;
+    text-align: center;
+    font-weight: 600;
+    color: #374151;
+}
+
+.resultado {
+    width: 30%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+/* Información adicional */
+.informacion {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+.informacion p {
+    margin: 8px 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.informacion strong {
+    color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .equipos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .equipo,
+    .resultado {
+        width: 100%;
+    }
+
+    .resultado {
+        font-size: 2.5rem;
+    }
+}

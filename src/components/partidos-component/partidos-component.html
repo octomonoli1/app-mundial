@@ -1,6 +1,54 @@
-<h1>Partidos</h1>
-<ul>
-    @for(partido of partidos; track partido.id){
-        <li>{{partido.equipoLocal}} vs {{partido.equipoVisitante}}</li>
-    }
-</ul>
+<div class="contenedor-partidos">
+    <h1>Resultados de los Partidos</h1>
+
+    <div class="lista-partidos">
+        <div class="card-partido" *ngFor="let partido of partidos">
+
+            <div class="cabecera">
+                <span class="fase">{{ partido.fase }}</span>
+                <span class="grupo" *ngIf="partido.grupo">
+                    Grupo {{ partido.grupo }}
+                </span>
+            </div>
+
+            <div class="equipos">
+                <div class="equipo">
+                    {{ partido.equipoLocal }}
+                </div>
+
+                <div class="resultado">
+                    <span>{{ partido.golesLocal }}</span>
+                    -
+                    <span>{{ partido.golesVisitante }}</span>
+                </div>
+
+                <div class="equipo">
+                    {{ partido.equipoVisitante }}
+                </div>
+            </div>
+
+            <div class="informacion">
+                <p>
+                    <strong>📍 Ciudad:</strong>
+                    {{ partido.ciudad }}
+                </p>
+
+                <p>
+                    <strong>🏟️ Estadio:</strong>
+                    {{ partido.estadio }}
+                </p>
+
+                <p>
+                    <strong>📅 Fecha:</strong>
+                    {{ partido.fecha | date:'dd/MM/yyyy HH:mm' }}
+                </p>
+
+                <p>
+                    <strong>👥 Asistencia:</strong>
+                    {{ partido.asistencia | number }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
